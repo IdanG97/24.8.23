@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let grades = [];
+        for (let input = parseFloat(prompt("Enter a grade (-99 to stop):")); input !== -99; input = parseFloat(prompt("Enter a grade (-99 to stop):"))) grades.push(input);
+
+        let validGrades = grades.filter(grade => grade >= 0 && grade <= 100);
+
+        let average = validGrades.reduce((sum, grade) => sum + grade, 0) / validGrades.length;
+
+        let list3 = validGrades.map(grade => +(grade > average));
+
+        console.log("Original Grades:", grades);
+        console.log("Valid Grades:", validGrades);
+        console.log("Average:", average);
+        console.log("Above Average:", validGrades.filter(grade => grade > average));
+        console.log("Below Average:", validGrades.filter(grade => grade < average));
+        console.log("List3:", list3);
+
+    </script>
+</body>
+
+</html>
