@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Name Array and Manipulation</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <table id="nameTable">
+        <script>
+            const names = ["Emily", "Liam", "Sophia", "Noah", "Olivia", "Ethan", "Eva", "Jackson", "Isabella", "Aiden"];
+
+            const table = document.createElement("table");
+            names.forEach(name => {
+                const row = document.createElement("tr");
+                const cell = document.createElement("td");
+                cell.textContent = name;
+                row.appendChild(cell);
+                table.appendChild(row);
+            });
+            document.body.appendChild(table);
+
+            const longNames = names.filter(name => name.length >= 4);
+
+            const shortNames = names.filter(name => name.length <= 4);
+
+            let concatenatedNames = "";
+            names.forEach(name => {
+                concatenatedNames += name;
+            });
+
+            const nameLengths = names.map(name => name.length);
+
+            const firstLetters = names.map(name => name[0]);
+
+            const namesWithE = names.filter(name => name.indexOf("E") !== -1);
+
+            console.log("Long Names:", longNames);
+            console.log("Short Names:", shortNames);
+            console.log("Concatenated Names:", concatenatedNames);
+            console.log("Name Lengths:", nameLengths);
+            console.log("First Letters:", firstLetters);
+            console.log("Names with 'E':", namesWithE);
+        </script>
+</body>
+
+</html>
