@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const list_rnd = [];
+        for (let i = 0; i < 10; i++) {
+            list_rnd.push(Math.floor(Math.random() * 7) + 1);
+        }
+
+        console.log("Original array:", list_rnd);
+
+        list_rnd.forEach(number => console.log(number));
+
+        const sum = list_rnd.reduce((total, number) => total + number, 0);
+        console.log("Sum:", sum);
+
+        const filteredList = list_rnd.filter(number => number < 5);
+        console.log("Filtered array:", filteredList);
+
+        const squaredList = list_rnd.map(number => number ** 2);
+        console.log("Squared array:", squaredList);
+
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const daysList = list_rnd.map(number => daysOfWeek[number - 1]);
+        console.log("Days array:", daysList);
+
+    </script>
+</body>
+
+</html>
